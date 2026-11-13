@@ -1,113 +1,35 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="format-detection" content="telephone=no">
-<meta name="color-scheme" content="light">
-<meta name="theme-color" content="#0F2E2A">
-<title>Mobilier LED | Queen Lounge by Queen House</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#0B0B0B"><title>Mobilier LED | Queen Lounge by Queen House</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
 <nav class="navbar">
-  <a href="index.html" class="logo"><div class="logo-icon">👑</div><div><span>QUEEN LOUNGE</span><small>BY QUEEN HOUSE</small></div></a>
+  <a href="index.html" class="logo"><div class="logo-mark">Q</div><div class="logo-text"><span>QUEEN LOUNGE</span><small>BY QUEEN HOUSE</small></div></a>
   <button class="burger" onclick="toggleMenu()">☰</button>
   <div class="nav-links" id="navLinks">
     <a href="index.html">Accueil</a>
-    <div class="dropdown">
-      <a href="#" class="drop-btn" onclick="return false">Services ▾</a>
-      <div class="drop-content">
-        <a href="mobilier-led.html">✨ Mobilier LED</a>
-        <a href="jacuzzi.html">💦 Jacuzzi VIP</a>
-        <a href="chicha.html">💨 Chicha & Chill</a>
-        <a href="combos.html">👑 Combos Complets</a>
-      </div>
-    </div>
+    <div class="dropdown"><a href="#" onclick="return false">Services ▾</a><div class="drop-content">
+      <a href="mobilier-led.html">Mobilier LED</a><a href="jacuzzi.html">Jacuzzi VIP</a><a href="chicha.html">Chicha &amp; Chill</a><a href="combos.html">Combos Complets</a></div></div>
     <a href="a-propos.html">À Propos</a>
     <button class="btn-dark" onclick="openModal('Demande générale',false)">Réserver</button>
   </div>
 </nav>
-
-<section class="page-head">
-  <h1>Mobilier LED</h1>
-  <p>Tables & chaises lumineuses — Livré chargé avec télécommande pour changer les couleurs selon votre ambiance.</p>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80" alt="Soirée LED">
-    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Ambiance lumineuse">
-    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80" alt="Fête">
-  </div>
-  <p style="font-size:12px;color:#888;margin-top:8px">Photos d'exemple — à remplacer par vos photos (lounge.jpg, led.jpg)</p>
-</section>
-
-<section class="packs">
-  <div class="packs-grid">
-    <div class="pack-card"><h3>Pack Basic Light</h3><p class="pack-desc">1 Table haute + 2 Chaises longues LED</p><div class="price">15 000 <small>FCFA</small></div><button onclick="openModal('Pack Basic Light - 15000F',false)">Réserver →</button></div>
-    <div class="pack-card"><h3>Pack Family Light</h3><p class="pack-desc">1 Table cube + 4 Chaises LED</p><div class="price">20 000 <small>FCFA</small></div><button onclick="openModal('Pack Family Light - 20000F',false)">Réserver →</button></div>
-    <div class="pack-card"><h3>Pack Duo Intime Lounge</h3><p class="pack-desc">1 Table haute + 2 Chaises longues LED + 1 Chicha</p><div class="price">20 000 <small>FCFA</small></div><button onclick="openModal('Pack Duo Intime Lounge - 20000F',false)">Réserver →</button></div>
-    <div class="pack-card popular"><span class="pack-tag gold">Le plus demandé</span><h3>Pack Lounge VIP Full Light</h3><p class="pack-desc">1 Table cube LED + 4 Chaises LED + 1 Chicha</p><div class="price">25 000 <small>FCFA</small></div><button onclick="openModal('Pack Lounge VIP Full Light - 25000F',false)">Réserver →</button></div>
-  </div>
-
-  <div class="carte-cta"><h3>Vous voulez composer vous-même ?</h3><button class="btn-gold" onclick="toggleBuilder()">✨ Composer mon pack — À la carte</button></div>
-  <div id="builder" class="builder" style="display:none"><h3>Composez votre pack</h3>
-    <label class="build-item"><input type="checkbox" data-price="15000" data-name="Ensemble Table Haute + 2 Chaises Longues LED" onchange="calcBuilder(false)"> Ensemble Table Haute + 2 Chaises Longues LED — <b>15 000 FCFA</b></label>
-    <label class="build-item"><input type="checkbox" data-price="20000" data-name="Ensemble Table Cube + 4 Chaises LED" onchange="calcBuilder(false)"> Ensemble Table Cube + 4 Chaises LED — <b>20 000 FCFA</b></label>
-    <label class="build-item"><input type="checkbox" data-price="7000" data-name="Chicha seule" onchange="calcBuilder(false)"> Chicha seule — <b>7 000 FCFA</b></label>
-    <label class="build-item"><input type="checkbox" data-price="5000" data-name="Chicha supplémentaire" onchange="calcBuilder(false)"> Chicha supplémentaire — <b>+ 5 000 FCFA</b></label>
-    <div class="builder-total">Total : <span id="totalPrice">0</span> FCFA • Caution : <span id="cautionPrice">20 000</span> FCFA</div>
-    <button class="btn-dark full" onclick="openModalFromBuilder(false)">Réserver ce pack personnalisé →</button>
-  </div>
-</section>
-
-<!-- GALERIE EXPÉRIENCES -->
-<section class="experiences">
-  <h2>Nos Expériences ✨</h2>
-  <p>Anniversaires, soirées entre amis, garden party — on s'occupe de tout.</p>
-  <div class="exp-grid">
-    <figure><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Anniversaire"><figcaption>🎂 Anniversaire VIP</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80" alt="Soirée"><figcaption>🥂 Soirée entre amis</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80" alt="Garden"><figcaption>🌿 Garden Party</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80" alt="Nuit"><figcaption>🌙 Nuit lumineuse</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Fête"><figcaption>🎉 Fête privée</figcaption></figure>
-    <figure><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80" alt="Célébration"><figcaption>💛 Célébration en famille</figcaption></figure>
-  </div>
-</section>
-
-<!-- AVIS QUI DÉFILENT -->
-<section class="avis">
-  <h2>Ils nous ont fait confiance ❤️</h2>
-  <div class="avis-viewport">
-    <div class="avis-track">
-      <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Incroyable ! Le mobilier LED a transformé mon jardin. Tout le monde a adoré."</p><b>— Grâce, Angondjé</b><small>Pack Lounge VIP</small></div>
-      <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Livraison à l'heure, installation parfaite. Je recommande à 100%."</p><b>— Kevin, Akanda</b><small>Pack Family Light</small></div>
-      <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Pour mon anniversaire c'était magique. Merci Queen Lounge !"</p><b>— Sarah, Libreville</b><small>Pack Basic Light</small></div>
-      <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Service pro, chaises magnifiques le soir. On a passé une super soirée."</p><b>— Mélissa, Owendo</b><small>Pack Duo Intime</small></div>
-      <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Incroyable ! Le mobilier LED a transformé mon jardin. Tout le monde a adoré."</p><b>— Grâce, Angondjé</b><small>Pack Lounge VIP</small></div>
-      <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Livraison à l'heure, installation parfaite. Je recommande à 100%."</p><b>— Kevin, Akanda</b><small>Pack Family Light</small></div>
-    </div>
-  </div>
-</section>
-
-<footer><p>© 2026 QUEEN LOUNGE BY QUEEN HOUSE • Libreville • Akanda • Owendo • Caution obligatoire</p></footer>
-
-<div class="modal" id="modal"><div class="modal-box"><div class="modal-head"><h3>Réserver — Queen Lounge</h3><span onclick="closeModal()">×</span></div><div class="field"><label>Pack sélectionné *</label><input type="text" id="selService" readonly></div><div class="field"><label>Nom & Prénom *</label><input type="text" id="selName" placeholder="Ex: Grâce Mba"></div><div class="field two"><div><label>Téléphone WhatsApp *</label><input type="tel" id="selPhone" placeholder="06 XX XX XX"></div><div><label>Date *</label><input type="date" id="selDate"></div></div><div class="field"><label>Adresse exacte / Quartier *</label><input type="text" id="selAdresse" placeholder="Ex: Angondjé, Akanda"></div><div class="field"><label>Heure de livraison</label><select id="selHeure"><option>Matin 09:00 - 11:00</option><option>Après-midi 13:00 - 15:00</option><option>Soir 16:00 - 18:00</option></select></div><div id="securiteBox" class="securite" style="display:none"><h4>🛡️ Sécurité Jacuzzi & Caution</h4><p>• Le client fournit l'eau + accès électricité.<br>• Interdiction absolue de manipuler les charbons ardents près du jacuzzi.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi.</p></div><div id="cautionSimple" class="nota">🔒 Caution : <b>20 000 FCFA</b> — Restituée après vérification.</div><button id="reserveBtn" class="btn-dark full" onclick="sendWhatsApp()">RÉSERVER SUR WHATSAPP 📱</button><p id="reservationStatus" style="font-size:12px;margin-top:10px;color:#A12B20"></p></div></div>
-
-<script>
-"use strict";
-const WHATSAPP_NUM="241XXXXXXXXX"; const SCRIPT_URL="https://script.google.com/macros/s/TON_SCRIPT_ID/exec";
-let currentHasJacuzzi=false, currentPack="";
-function toggleMenu(){document.getElementById("navLinks").classList.toggle("open");}
-function openModal(pack,hasJac){currentPack=pack;currentHasJacuzzi=hasJac;document.getElementById("selService").value=pack;document.getElementById("modal").classList.add("active");updateSecurite(hasJac);}
-function updateSecurite(hasJac){document.getElementById("securiteBox").style.display=hasJac?"block":"none";document.getElementById("cautionSimple").style.display=hasJac?"none":"block";}
-function closeModal(){document.getElementById("modal").classList.remove("active");}
-function toggleBuilder(){const b=document.getElementById("builder");if(!b)return;b.style.display=b.style.display==="none"?"block":"none";}
-function calcBuilder(pageHasJac){let t=0,names=[],has=false;document.querySelectorAll("#builder input[type=checkbox]:checked").forEach(c=>{t+=parseInt(c.dataset.price);names.push(c.dataset.name);if(c.dataset.jacuzzi)has=true;});const tp=document.getElementById("totalPrice");if(tp)tp.textContent=t.toLocaleString("fr-FR");const withJac=has||pageHasJac;const cp=document.getElementById("cautionPrice");if(cp)cp.textContent=withJac?"50 000":"20 000";currentPack=names.length?"Sur mesure: "+names.join(" + ")+" = "+t+"F":"";return withJac;}
-function openModalFromBuilder(pageHasJac){const w=calcBuilder(pageHasJac);if(!currentPack){alert("Cochez au moins un élément.");return;}openModal(currentPack,w);}
-async function sendWhatsApp(){const name=document.getElementById("selName").value.trim(),phone=document.getElementById("selPhone").value.trim(),adresse=document.getElementById("selAdresse").value.trim(),date=document.getElementById("selDate").value,heure=document.getElementById("selHeure").value,status=document.getElementById("reservationStatus");if(!name||name.split(" ").length<2){status.textContent="⚠️ Entrez votre Nom & Prénom (2 mots minimum).";return;}if(!phone||phone.length<8){status.textContent="⚠️ Entrez votre numéro WhatsApp.";return;}if(!adresse||adresse.length<5){status.textContent="⚠️ Entrez votre adresse exacte / quartier.";return;}if(!date){status.textContent="⚠️ Choisissez une date.";return;}const btn=document.getElementById("reserveBtn");btn.disabled=true;btn.textContent="ENREGISTREMENT...";const form=new URLSearchParams();form.append("Date",date);form.append("Service",currentPack);form.append("Nom",name);form.append("Telephone",phone);form.append("Adresse",adresse);form.append("Heure",heure);form.append("Token","queen-"+Date.now());try{await fetch(SCRIPT_URL,{method:"POST",body:form,mode:"no-cors"});}catch(e){}const caution=currentHasJacuzzi?"50 000 FCFA":"20 000 FCFA";const msg=[`Bonjour Queen Lounge 👑`,`Pack: ${currentPack}`,`Date: ${date}`,`Heure livraison: ${heure}`,`Nom & Prénom: ${name}`,`Téléphone: ${phone}`,`Adresse: ${adresse}`,`Caution: ${caution}`,"Je confirme ma réservation."].join("\n");window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`,"_blank");closeModal();btn.disabled=false;btn.textContent="RÉSERVER SUR WHATSAPP 📱";}
-document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal();});
-const d=document.getElementById("selDate");if(d){d.min=new Date().toISOString().split("T")[0];d.value=d.min;}
-</script>
-</body>
-</html>
+<section class="section" style="text-align:center;padding-bottom:0"><span class="eyebrow">Queen Lounge — Libreville</span><h1 style="font-size:clamp(36px,4vw,52px)">Mobilier LED</h1><p style="color:#777;max-width:640px;margin:14px auto">Tables & chaises lumineuses — Livré chargé avec télécommande pour changer les couleurs selon votre ambiance.</p></section>
+<section class="section"><div class="grid-3"><div class="card pack-card "><h3>Pack Basic Light</h3><p>1 Table haute + 2 Chaises longues LED</p><div class="price">15 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Basic Light - 15000F',false)">Réserver →</button></div><div class="card pack-card "><h3>Pack Family Light</h3><p>1 Table cube + 4 Chaises LED</p><div class="price">20 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Family Light - 20000F',false)">Réserver →</button></div><div class="card pack-card "><h3>Pack Duo Intime Lounge</h3><p>1 Table haute + 2 Chaises longues LED + 1 Chicha</p><div class="price">20 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Duo Intime Lounge - 20000F',false)">Réserver →</button></div><div class="card pack-card popular"><span class="tag">Le plus demandé</span><h3>Pack Lounge VIP Full Light</h3><p>1 Table cube LED + 4 Chaises LED + 1 Chicha</p><div class="price">25 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Lounge VIP Full Light - 25000F',false)">Réserver →</button></div></div>
+<div style="text-align:center;margin-top:28px"><button class="btn-gold" onclick="toggleBuilder()">Composer mon pack — À la carte</button></div>
+<div id="builder" class="builder" style="display:none"><h3 style="font-size:28px">Composez votre pack</h3><label class="build-item"><input type="checkbox" data-price="15000" data-name="Ensemble Table Haute + 2 Chaises Longues LED" onchange="calcBuilder(false)"> Ensemble Table Haute + 2 Chaises Longues LED <b>15 000 FCFA</b></label><label class="build-item"><input type="checkbox" data-price="20000" data-name="Ensemble Table Cube + 4 Chaises LED" onchange="calcBuilder(false)"> Ensemble Table Cube + 4 Chaises LED <b>20 000 FCFA</b></label><label class="build-item"><input type="checkbox" data-price="7000" data-name="Chicha seule" onchange="calcBuilder(false)"> Chicha seule <b>7 000 FCFA</b></label><div class="builder-total">Total : <span id="totalPrice">0</span> FCFA • Caution : <span id="cautionPrice">20 000</span> FCFA</div><button class="btn-dark full" onclick="openModalFromBuilder(false)">Réserver ce pack personnalisé →</button></div></section>
+<footer><strong>QUEEN LOUNGE BY QUEEN HOUSE</strong><br>Libreville • Akanda • Owendo • Caution obligatoire<br>© 2026 Queen Lounge — Tous droits réservés</footer><div class="modal" id="modal"><div class="modal-box">
+  <div class="modal-head"><div><span class="eyebrow">Queen Lounge — Libreville</span><h3>Réserver</h3><p>Complétez votre réservation en 2 minutes.</p></div><span onclick="closeModal()">×</span></div>
+  <div class="field"><label>Pack sélectionné</label><input type="text" id="selService" readonly></div>
+  <div class="field"><label>Nom &amp; Prénom *</label><input type="text" id="selName" placeholder="Ex : Grâce Mba"></div>
+  <div class="field two"><div><label>Téléphone WhatsApp *</label><input type="tel" id="selPhone" placeholder="06 XX XX XX"></div><div><label>Date *</label><input type="date" id="selDate"></div></div>
+  <div class="field"><label>Adresse exacte / Quartier *</label><input type="text" id="selAdresse" placeholder="Ex : Angondjé, Akanda"></div>
+  <div class="field"><label>Heure de livraison</label><select id="selHeure"><option>Matin 09:00 - 11:00</option><option>Après-midi 13:00 - 15:00</option><option>Soir 16:00 - 18:00</option></select></div>
+  <div class="field"><label>Paiement</label><div class="pay-grid">
+    <div class="pay-opt active" onclick="selectPay(this)"><b>Acompte</b><small>Pour confirmer votre date</small></div>
+    <div class="pay-opt" onclick="selectPay(this)"><b>Paiement sur place</b><small>Solde à la livraison</small></div>
+  </div></div>
+  <div id="securiteBox" class="securite" style="display:none"><b>Sécurité Jacuzzi &amp; Caution</b><br>• Le client fournit l'eau + accès électricité.<br>• Interdiction charbons près du jacuzzi.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi.</div>
+  <div id="cautionSimple" class="nota">Caution : <b>20 000 FCFA</b> — Restituée après vérification.</div>
+  <button id="reserveBtn" class="btn-dark full" onclick="sendWhatsApp()">Réserver sur WhatsApp →</button>
+  <p id="reservationStatus" style="font-size:12px;margin-top:10px;color:#A12B20"></p>
+</div></div><script src="script.js"></script></body></html>
