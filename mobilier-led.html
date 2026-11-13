@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobilier LED | Queen Lounge</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="logo"><div class="logo-icon">👑</div><div><span>QUEEN LOUNGE</span><small>BY QUEEN HOUSE</small></div></a>
+  <div class="nav-links"><a href="index.html">← Retour Accueil</a><a href="jacuzzi.html">Jacuzzi</a><a href="chicha.html">Chicha</a><a href="combos.html">Combos</a></div>
+</nav>
+
+<section class="page-head">
+  <h1>Mobilier LED</h1><p>Tables & chaises lumineuses — Livré chargé avec télécommande pour changer les couleurs.</p>
+  <div class="gallery"><img src="lounge.jpg"><img src="led.jpg"><img src="led2.jpg"></div>
+</section>
+
+<section class="packs">
+  <div class="packs-grid">
+    <div class="pack-card"><h3>Pack Basic Light</h3><p class="pack-desc">1 Table haute + 2 Chaises longues lumineuses LED</p><div class="price">15 000 <small>FCFA / soirée</small></div><button onclick="openModal('Pack Basic Light - 15000F',false)">Réserver →</button></div>
+    <div class="pack-card"><h3>Pack Family Light</h3><p class="pack-desc">1 Table cube + 4 Chaises lumineuses LED</p><div class="price">20 000 <small>FCFA / soirée</small></div><button onclick="openModal('Pack Family Light - 20000F',false)">Réserver →</button></div>
+    <div class="pack-card"><h3>Pack Duo Intime Lounge</h3><p class="pack-desc">1 Table haute + 2 Chaises longues LED + 1 Chicha complète</p><div class="price">20 000 <small>FCFA / soirée</small></div><button onclick="openModal('Pack Duo Intime Lounge - 20000F',false)">Réserver →</button></div>
+    <div class="pack-card popular"><span class="pack-tag gold">Le plus demandé</span><h3>Pack Lounge VIP Full Light</h3><p class="pack-desc">1 Table cube LED + 4 Chaises LED + 1 Chicha prête à fumer</p><div class="price">25 000 <small>FCFA / soirée</small></div><button onclick="openModal('Pack Lounge VIP Full Light - 25000F',false)">Réserver →</button></div>
+  </div>
+
+  <!-- BOUTON À LA CARTE -->
+  <div class="carte-cta"><h3>Vous voulez composer vous-même ?</h3><p>Ajoutez ce que vous voulez, le prix se calcule tout seul.</p><button class="btn-gold" onclick="toggleBuilder()">✨ Composer mon pack — À la carte</button></div>
+
+  <!-- BUILDER À LA CARTE - OCULTO HASTA QUE PULSA -->
+  <div id="builder" class="builder" style="display:none">
+    <h3>Composez votre pack</h3>
+    <label class="build-item"><input type="checkbox" data-price="15000" data-name="Ensemble Table Haute + 2 Chaises Longues LED" onchange="calcBuilder(false)"> Ensemble Table Haute + 2 Chaises Longues LED — <b>15 000 FCFA</b></label>
+    <label class="build-item"><input type="checkbox" data-price="20000" data-name="Ensemble Table Cube + 4 Chaises LED" onchange="calcBuilder(false)"> Ensemble Table Cube + 4 Chaises LED — <b>20 000 FCFA</b></label>
+    <label class="build-item"><input type="checkbox" data-price="7000" data-name="Chicha seule" onchange="calcBuilder(false)"> Chicha seule (prête à fumer) — <b>7 000 FCFA</b></label>
+    <label class="build-item"><input type="checkbox" data-price="5000" data-name="Chicha supplémentaire" onchange="calcBuilder(false)"> Chicha supplémentaire — <b>+ 5 000 FCFA</b></label>
+    <div class="builder-total">Total : <span id="totalPrice">0</span> FCFA • Caution : <span id="cautionPrice">20 000</span> FCFA</div>
+    <button class="btn-dark full" onclick="openModalFromBuilder(false)">Réserver ce pack personnalisé →</button>
+  </div>
+</section>
+
+<!-- MODAL - MISMO EN TODAS LAS PÁGINAS -->
+<div class="modal" id="modal"><div class="modal-box">
+  <div class="modal-head"><h3>Réserver — Queen Lounge</h3><span onclick="closeModal()">×</span></div>
+  <div class="field"><label>Pack sélectionné *</label><input type="text" id="selService" readonly></div>
+  <div class="field"><label>Nom & Prénom *</label><input type="text" id="selName" placeholder="Ex: Grâce Mba"></div>
+  <div class="field two"><div><label>Téléphone WhatsApp *</label><input type="tel" id="selPhone" placeholder="06 XX XX XX"></div><div><label>Date *</label><input type="date" id="selDate"></div></div>
+  <div class="field"><label>Adresse exacte / Quartier *</label><input type="text" id="selAdresse" placeholder="Ex: Angondjé, Akanda"></div>
+  <div class="field"><label>Heure de livraison</label><select id="selHeure"><option>Matin 09:00 - 11:00</option><option>Après-midi 13:00 - 15:00</option><option>Soir 16:00 - 18:00</option></select></div>
+  <div id="securiteBox" class="securite" style="display:none">
+    <h4>🛡️ Sécurité Jacuzzi & Caution</h4>
+    <p>• Le client fournit l'eau + accès électricité. Nous installons et vérifions avant de partir.<br>• Interdiction absolue de manipuler les charbons ardents de chicha près du jacuzzi — risque de brûlure du liner.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi (restituée après vérification).</p>
+  </div>
+  <div id="cautionSimple" class="nota">🔒 Caution : <b>20 000 FCFA</b> — Restituée après vérification. Déduite en cas de casse / brûlure / perte télécommande.</div>
+  <button id="reserveBtn" class="btn-dark full" onclick="sendWhatsApp()">RÉSERVER SUR WHATSAPP 📱</button>
+  <p id="reservationStatus" style="font-size:12px;margin-top:10px;color:#A12B20"></p>
+</div></div>
+
+<script src="app.js"></script>
+</body>
+</html>
