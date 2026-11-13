@@ -1,9 +1,44 @@
 <!DOCTYPE html>
-<html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Jacuzzi VIP | Queen Lounge by Queen House</title><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0F2E2A">
+<title>Jacuzzi VIP | Queen Lounge by Queen House</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
 <body>
-<nav class="navbar"><a href="index.html" class="logo"><div class="logo-icon">👑</div><div><span>QUEEN LOUNGE</span><small>BY QUEEN HOUSE</small></div></a><div class="nav-links"><a href="index.html">← Accueil</a><a href="mobilier-led.html">Mobilier LED</a><a href="chicha.html">Chicha</a><a href="combos.html">Combos</a></div></nav>
+<nav class="navbar">
+  <a href="index.html" class="logo"><div class="logo-icon">👑</div><div><span>QUEEN LOUNGE</span><small>BY QUEEN HOUSE</small></div></a>
+  <button class="burger" onclick="toggleMenu()">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Accueil</a>
+    <div class="dropdown"><a href="#" class="drop-btn" onclick="return false">Services ▾</a>
+      <div class="drop-content">
+        <a href="mobilier-led.html">✨ Mobilier LED</a>
+        <a href="jacuzzi.html">💦 Jacuzzi VIP</a>
+        <a href="chicha.html">💨 Chicha & Chill</a>
+        <a href="combos.html">👑 Combos Complets</a>
+      </div>
+    </div>
+    <a href="a-propos.html">À Propos</a>
+    <button class="btn-dark" onclick="openModal('Demande générale',false)">Réserver</button>
+  </div>
+</nav>
 
-<section class="page-head"><h1>Jacuzzi VIP 💦</h1><p>Détente haut de gamme — Livré, installé & testé chez vous.<br>Le client fournit l'eau + accès électricité. Nous vérifions filtration / chauffage avant de partir.</p><div class="gallery"><img src="jacuzzi.jpg"><img src="jacuzzi2.jpg"><img src="jacuzzi3.jpg"></div></section>
+<section class="page-head">
+  <h1>Jacuzzi VIP 💦</h1>
+  <p>Détente haut de gamme — Livré, installé & testé chez vous.<br>Le client fournit l'eau + accès électricité. Nous vérifions filtration / chauffage avant de partir.</p>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" alt="Jacuzzi">
+    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80" alt="Spa">
+    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" alt="Détente">
+  </div>
+  <p style="font-size:12px;color:#888;margin-top:8px">Photos d'exemple — à remplacer par jacuzzi.jpg</p>
+</section>
 
 <section class="packs"><h2>Nos Packs Jacuzzi</h2>
 <div class="packs-grid">
@@ -11,24 +46,49 @@
 <div class="pack-card"><h3>Pack Chill & Pool</h3><p class="pack-desc">Jacuzzi VIP + 2 Chichas complètes (goûts & charbons inclus).</p><div class="price">70 000 <small>FCFA / soirée</small></div><button onclick="openModal('Pack Chill & Pool - 70000F',true)">Réserver →</button></div>
 <div class="pack-card popular"><span class="pack-tag gold">Idéal Anniversaire</span><h3>Jacuzzi + Lounge</h3><p class="pack-desc">Jacuzzi VIP + 1 Ensemble Table Cube + 4 Chaises LED + 1 Chicha.</p><div class="price">80 000 <small>FCFA / soirée</small></div><button onclick="openModal('Pack Queen Lounge VIP - 80000F',true)">Réserver →</button></div>
 </div>
-
 <div class="carte-cta"><h3>Vous voulez composer vous-même ?</h3><p>Ajoutez Jacuzzi + LED + Chicha, le prix se calcule tout seul.</p><button class="btn-gold" onclick="toggleBuilder()">✨ Composer mon pack — À la carte</button></div>
-
 <div id="builder" class="builder" style="display:none"><h3>Composez votre pack</h3>
-<label class="build-item"><input type="checkbox" data-price="60000" data-jacuzzi="1" data-name="Jacuzzi VIP seul" onchange="calcBuilder(true)"> Jacuzzi VIP seul (livré, installé & testé) — <b>60 000 FCFA</b></label>
+<label class="build-item"><input type="checkbox" data-price="60000" data-jacuzzi="1" data-name="Jacuzzi VIP seul" onchange="calcBuilder(true)"> Jacuzzi VIP seul — <b>60 000 FCFA</b></label>
 <label class="build-item"><input type="checkbox" data-price="20000" data-name="Ensemble Table Cube + 4 Chaises LED" onchange="calcBuilder(true)"> Ensemble Table Cube + 4 Chaises LED — <b>20 000 FCFA</b></label>
 <label class="build-item"><input type="checkbox" data-price="15000" data-name="Ensemble Table Haute + 2 Chaises Longues LED" onchange="calcBuilder(true)"> Ensemble Table Haute + 2 Chaises Longues LED — <b>15 000 FCFA</b></label>
-<label class="build-item"><input type="checkbox" data-price="7000" data-name="Chicha seule" onchange="calcBuilder(true)"> Chicha seule (prête à fumer) — <b>7 000 FCFA</b></label>
+<label class="build-item"><input type="checkbox" data-price="7000" data-name="Chicha seule" onchange="calcBuilder(true)"> Chicha seule — <b>7 000 FCFA</b></label>
 <label class="build-item"><input type="checkbox" data-price="5000" data-name="Chicha supplémentaire" onchange="calcBuilder(true)"> Chicha supplémentaire — <b>+ 5 000 FCFA</b></label>
 <div class="builder-total">Total : <span id="totalPrice">0</span> FCFA • Caution : <span id="cautionPrice">50 000</span> FCFA</div>
 <button class="btn-dark full" onclick="openModalFromBuilder(true)">Réserver ce pack personnalisé →</button></div>
 </section>
 
-<div class="modal" id="modal"><div class="modal-box"><div class="modal-head"><h3>Réserver — Queen Lounge</h3><span onclick="closeModal()">×</span></div><div class="field"><label>Pack sélectionné *</label><input type="text" id="selService" readonly></div><div class="field"><label>Nom & Prénom *</label><input type="text" id="selName" placeholder="Ex: Grâce Mba"></div><div class="field two"><div><label>Téléphone WhatsApp *</label><input type="tel" id="selPhone" placeholder="06 XX XX XX"></div><div><label>Date *</label><input type="date" id="selDate"></div></div><div class="field"><label>Adresse exacte / Quartier *</label><input type="text" id="selAdresse" placeholder="Ex: Angondjé, Akanda"></div><div class="field"><label>Heure de livraison</label><select id="selHeure"><option>Matin 09:00 - 11:00</option><option>Après-midi 13:00 - 15:00</option><option>Soir 16:00 - 18:00</option></select></div><div id="securiteBox" class="securite" style="display:none"><h4>🛡️ Sécurité Jacuzzi & Caution</h4><p>• Le client fournit l'eau + accès électricité. Nous installons et vérifions avant de partir.<br>• Interdiction absolue de manipuler les charbons ardents de chicha à l'intérieur ou près du jacuzzi — risque de brûlure du liner.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi — Restituée après vérification.</p></div><div id="cautionSimple" class="nota">🔒 Caution : <b>20 000 FCFA</b> — Restituée après vérification.</div><button id="reserveBtn" class="btn-dark full" onclick="sendWhatsApp()">RÉSERVER SUR WHATSAPP 📱</button><p id="reservationStatus" style="font-size:12px;margin-top:10px;color:#A12B20"></p></div></div>
+<section class="experiences">
+  <h2>Nos Expériences Jacuzzi ✨</h2><p>Soirée romantique, anniversaire, détente entre amis.</p>
+  <div class="exp-grid">
+    <figure><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"><figcaption>💦 Soirée Jacuzzi</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80"><figcaption>💕 Bulle Romantique</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80"><figcaption>🧖 Détente VIP</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80"><figcaption>🎂 Anniversaire Pool</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80"><figcaption>🥂 Chill entre amis</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80"><figcaption>🌙 Nuit Jacuzzi</figcaption></figure>
+  </div>
+</section>
+
+<section class="avis">
+  <h2>Ils nous ont fait confiance ❤️</h2>
+  <div class="avis-viewport"><div class="avis-track">
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Jacuzzi parfait, installé à l'heure. Expérience de fou !"</p><b>— Kevin, Akanda</b><small>Pack Bulle Romantique</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Soirée romantique parfaite, merci pour l'installation."</p><b>— Léa, Libreville</b><small>Pack Chill & Pool</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Pour mon anniversaire c'était magique !"</p><b>— Sarah, Angondjé</b><small>Pack Queen Lounge VIP</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Service pro, eau chaude, tout vérifié avant de partir."</p><b>— Yann, Owendo</b><small>Pack Bulle Romantique</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Jacuzzi parfait, installé à l'heure. Expérience de fou !"</p><b>— Kevin, Akanda</b><small>Pack Bulle Romantique</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Soirée romantique parfaite, merci pour l'installation."</p><b>— Léa, Libreville</b><small>Pack Chill & Pool</small></div>
+  </div></div>
+</section>
+
+<footer><p>© 2026 QUEEN LOUNGE BY QUEEN HOUSE • Libreville • Akanda • Owendo • Caution 50 000 FCFA avec jacuzzi</p></footer>
+
+<div class="modal" id="modal"><div class="modal-box"><div class="modal-head"><h3>Réserver — Queen Lounge</h3><span onclick="closeModal()">×</span></div><div class="field"><label>Pack sélectionné *</label><input type="text" id="selService" readonly></div><div class="field"><label>Nom & Prénom *</label><input type="text" id="selName" placeholder="Ex: Grâce Mba"></div><div class="field two"><div><label>Téléphone WhatsApp *</label><input type="tel" id="selPhone" placeholder="06 XX XX XX"></div><div><label>Date *</label><input type="date" id="selDate"></div></div><div class="field"><label>Adresse exacte / Quartier *</label><input type="text" id="selAdresse" placeholder="Ex: Angondjé, Akanda"></div><div class="field"><label>Heure de livraison</label><select id="selHeure"><option>Matin 09:00 - 11:00</option><option>Après-midi 13:00 - 15:00</option><option>Soir 16:00 - 18:00</option></select></div><div id="securiteBox" class="securite" style="display:none"><h4>🛡️ Sécurité Jacuzzi & Caution</h4><p>• Le client fournit l'eau + accès électricité.<br>• Interdiction charbons près du jacuzzi — risque brûlure liner.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi.</p></div><div id="cautionSimple" class="nota">🔒 Caution : <b>20 000 FCFA</b></div><button id="reserveBtn" class="btn-dark full" onclick="sendWhatsApp()">RÉSERVER SUR WHATSAPP 📱</button><p id="reservationStatus" style="font-size:12px;margin-top:10px;color:#A12B20"></p></div></div>
 <script>
 "use strict";
 const WHATSAPP_NUM="241XXXXXXXXX"; const SCRIPT_URL="https://script.google.com/macros/s/TON_SCRIPT_ID/exec";
 let currentHasJacuzzi=false, currentPack="";
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("open");}
 function openModal(pack,hasJac){currentPack=pack;currentHasJacuzzi=hasJac;document.getElementById("selService").value=pack;document.getElementById("modal").classList.add("active");updateSecurite(hasJac);}
 function updateSecurite(hasJac){document.getElementById("securiteBox").style.display=hasJac?"block":"none";document.getElementById("cautionSimple").style.display=hasJac?"none":"block";}
 function closeModal(){document.getElementById("modal").classList.remove("active");}
@@ -39,4 +99,5 @@ async function sendWhatsApp(){const name=document.getElementById("selName").valu
 document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal();});
 const d=document.getElementById("selDate");if(d){d.min=new Date().toISOString().split("T")[0];d.value=d.min;}
 </script>
-</body></html>
+</body>
+</html>
