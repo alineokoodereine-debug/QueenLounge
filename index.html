@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0F2E2A">
 <title>Queen Lounge by Queen House | Location VIP Libreville</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -9,9 +13,22 @@
 <body>
 <nav class="navbar">
   <a href="index.html" class="logo"><div class="logo-icon">👑</div><div><span>QUEEN LOUNGE</span><small>BY QUEEN HOUSE</small></div></a>
-  <div class="nav-links"><a href="index.html">Accueil</a><a href="mobilier-led.html">Mobilier LED</a><a href="jacuzzi.html">Jacuzzi VIP</a><a href="chicha.html">Chicha</a><a href="combos.html">Combos</a></div>
-  <button class="btn-dark" onclick="openModal('Demande générale',false)">Réserver</button>
+  <button class="burger" onclick="toggleMenu()">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Accueil</a>
+    <div class="dropdown"><a href="#" class="drop-btn" onclick="return false">Services ▾</a>
+      <div class="drop-content">
+        <a href="mobilier-led.html">✨ Mobilier LED</a>
+        <a href="jacuzzi.html">💦 Jacuzzi VIP</a>
+        <a href="chicha.html">💨 Chicha & Chill</a>
+        <a href="combos.html">👑 Combos Complets</a>
+      </div>
+    </div>
+    <a href="a-propos.html">À Propos</a>
+    <button class="btn-dark" onclick="openModal('Demande générale',false)">Réserver</button>
+  </div>
 </nav>
+
 <header class="hero">
   <div class="hero-left">
     <span class="badge">Location premium • Libreville • Événements exclusifs</span>
@@ -20,20 +37,50 @@
     <div class="hero-btns"><a class="btn-dark" href="#univers">Explorer les univers →</a><a class="btn-outline" href="combos.html">Voir les Combos 👑</a></div>
     <div class="hero-trust"><span>✓ Livraison à domicile</span><span>✓ Installation professionnelle</span><span>✓ Qualité garantie</span></div>
   </div>
-  <div class="hero-right"><div class="hero-grid"><img src="jacuzzi.jpg"><img src="lounge.jpg"><img src="chicha.jpg"><img src="led.jpg"></div></div>
+  <div class="hero-right"><div class="hero-grid">
+    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80" alt="Soirée">
+    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80" alt="Lounge">
+    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80" alt="Fête">
+    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80" alt="Anniversaire">
+  </div></div>
 </header>
+
 <section class="categories" id="univers">
   <h2>Nos univers</h2><p>Sélectionnez ce dont votre événement a besoin</p>
   <div class="cat-grid">
-    <div class="cat-card"><img src="lounge.jpg"><h3>Mobilier LED</h3><p>Tables & chaises lumineuses</p><a href="mobilier-led.html">Voir plus →</a></div>
-    <div class="cat-card"><img src="jacuzzi.jpg"><h3>Jacuzzi VIP</h3><p>Détente haut de gamme, installé & testé</p><a href="jacuzzi.html">Voir plus →</a></div>
-    <div class="cat-card"><img src="chicha.jpg"><h3>Chicha & Chill</h3><p>Formule prête à fumer</p><a href="chicha.html">Voir plus →</a></div>
-    <div class="cat-card"><img src="combo.jpg"><h3>Combos Complets 👑</h3><p>Jacuzzi + LED + Chicha — La totale</p><a href="combos.html">Voir plus →</a></div>
+    <div class="cat-card"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=800&q=80"><h3>Mobilier LED</h3><p>Tables & chaises lumineuses</p><a href="mobilier-led.html">Voir plus →</a></div>
+    <div class="cat-card"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"><h3>Jacuzzi VIP</h3><p>Détente haut de gamme, installé & testé</p><a href="jacuzzi.html">Voir plus →</a></div>
+    <div class="cat-card"><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80"><h3>Chicha & Chill</h3><p>Formule prête à fumer</p><a href="chicha.html">Voir plus →</a></div>
+    <div class="cat-card"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80"><h3>Combos Complets 👑</h3><p>Jacuzzi + LED + Chicha — La totale</p><a href="combos.html">Voir plus →</a></div>
   </div>
 </section>
+
+<section class="experiences">
+  <h2>Nos Expériences ✨</h2><p>Anniversaires, soirées entre amis, garden party — on s'occupe de tout.</p>
+  <div class="exp-grid">
+    <figure><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&q=80"><figcaption>🎂 Anniversaire VIP</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?w=800&q=80"><figcaption>🥂 Soirée entre amis</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&q=80"><figcaption>🌿 Garden Party</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=800&q=80"><figcaption>🌙 Nuit lumineuse</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&q=80"><figcaption>🎉 Fête privée</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=800&q=80"><figcaption>💛 Célébration en famille</figcaption></figure>
+  </div>
+</section>
+
+<section class="avis">
+  <h2>Ils nous ont fait confiance ❤️</h2>
+  <div class="avis-viewport"><div class="avis-track">
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Incroyable ! Le mobilier LED a transformé mon jardin."</p><b>— Grâce, Angondjé</b><small>Pack Lounge VIP</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Jacuzzi parfait, installé à l'heure. Expérience de fou !"</p><b>— Kevin, Akanda</b><small>Pack Bulle Romantique</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Pour mon anniversaire c'était magique. Merci Queen Lounge !"</p><b>— Sarah, Libreville</b><small>Pack Queen Royal</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Service pro, chaises magnifiques le soir."</p><b>— Mélissa, Owendo</b><small>Pack Duo Intime</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Incroyable ! Le mobilier LED a transformé mon jardin."</p><b>— Grâce, Angondjé</b><small>Pack Lounge VIP</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Jacuzzi parfait, installé à l'heure. Expérience de fou !"</p><b>— Kevin, Akanda</b><small>Pack Bulle Romantique</small></div>
+  </div></div>
+</section>
+
 <footer><p>© 2026 QUEEN LOUNGE BY QUEEN HOUSE • Libreville • Akanda • Owendo • Caution obligatoire</p></footer>
 
-<!-- MODAL + JS INTEGRADO -->
 <div class="modal" id="modal"><div class="modal-box">
   <div class="modal-head"><h3>Réserver — Queen Lounge</h3><span onclick="closeModal()">×</span></div>
   <div class="field"><label>Pack sélectionné *</label><input type="text" id="selService" readonly></div>
@@ -41,7 +88,7 @@
   <div class="field two"><div><label>Téléphone WhatsApp *</label><input type="tel" id="selPhone" placeholder="06 XX XX XX"></div><div><label>Date *</label><input type="date" id="selDate"></div></div>
   <div class="field"><label>Adresse exacte / Quartier *</label><input type="text" id="selAdresse" placeholder="Ex: Angondjé, Akanda"></div>
   <div class="field"><label>Heure de livraison</label><select id="selHeure"><option>Matin 09:00 - 11:00</option><option>Après-midi 13:00 - 15:00</option><option>Soir 16:00 - 18:00</option></select></div>
-  <div id="securiteBox" class="securite" style="display:none"><h4>🛡️ Sécurité Jacuzzi & Caution</h4><p>• Le client fournit l'eau + accès électricité.<br>• Interdiction absolue de manipuler les charbons ardents près du jacuzzi.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi.</p></div>
+  <div id="securiteBox" class="securite" style="display:none"><h4>🛡️ Sécurité Jacuzzi & Caution</h4><p>• Le client fournit l'eau + accès électricité.<br>• Interdiction charbons près du jacuzzi.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi.</p></div>
   <div id="cautionSimple" class="nota">🔒 Caution : <b>20 000 FCFA</b> — Restituée après vérification.</div>
   <button id="reserveBtn" class="btn-dark full" onclick="sendWhatsApp()">RÉSERVER SUR WHATSAPP 📱</button>
   <p id="reservationStatus" style="font-size:12px;margin-top:10px;color:#A12B20"></p>
@@ -50,25 +97,14 @@
 "use strict";
 const WHATSAPP_NUM="241XXXXXXXXX"; const SCRIPT_URL="https://script.google.com/macros/s/TON_SCRIPT_ID/exec";
 let currentHasJacuzzi=false, currentPack="";
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("open");}
 function openModal(pack,hasJac){currentPack=pack;currentHasJacuzzi=hasJac;document.getElementById("selService").value=pack;document.getElementById("modal").classList.add("active");updateSecurite(hasJac);}
 function updateSecurite(hasJac){document.getElementById("securiteBox").style.display=hasJac?"block":"none";document.getElementById("cautionSimple").style.display=hasJac?"none":"block";}
 function closeModal(){document.getElementById("modal").classList.remove("active");}
 function toggleBuilder(){const b=document.getElementById("builder");if(!b)return;b.style.display=b.style.display==="none"?"block":"none";}
 function calcBuilder(pageHasJac){let t=0,names=[],has=false;document.querySelectorAll("#builder input[type=checkbox]:checked").forEach(c=>{t+=parseInt(c.dataset.price);names.push(c.dataset.name);if(c.dataset.jacuzzi)has=true;});const tp=document.getElementById("totalPrice");if(tp)tp.textContent=t.toLocaleString("fr-FR");const withJac=has||pageHasJac;const cp=document.getElementById("cautionPrice");if(cp)cp.textContent=withJac?"50 000":"20 000";currentPack=names.length?"Sur mesure: "+names.join(" + ")+" = "+t+"F":"";return withJac;}
 function openModalFromBuilder(pageHasJac){const w=calcBuilder(pageHasJac);if(!currentPack){alert("Cochez au moins un élément.");return;}openModal(currentPack,w);}
-async function sendWhatsApp(){
-  const name=document.getElementById("selName").value.trim(),phone=document.getElementById("selPhone").value.trim(),adresse=document.getElementById("selAdresse").value.trim(),date=document.getElementById("selDate").value,heure=document.getElementById("selHeure").value,status=document.getElementById("reservationStatus");
-  if(!name||name.split(" ").length<2){status.textContent="⚠️ Entrez votre Nom & Prénom (2 mots minimum).";return;}
-  if(!phone||phone.length<8){status.textContent="⚠️ Entrez votre numéro WhatsApp.";return;}
-  if(!adresse||adresse.length<5){status.textContent="⚠️ Entrez votre adresse exacte / quartier.";return;}
-  if(!date){status.textContent="⚠️ Choisissez une date.";return;}
-  const btn=document.getElementById("reserveBtn");btn.disabled=true;btn.textContent="ENREGISTREMENT...";
-  const form=new URLSearchParams();form.append("Date",date);form.append("Service",currentPack);form.append("Nom",name);form.append("Telephone",phone);form.append("Adresse",adresse);form.append("Heure",heure);form.append("Token","queen-"+Date.now());
-  try{await fetch(SCRIPT_URL,{method:"POST",body:form,mode:"no-cors"});}catch(e){}
-  const caution=currentHasJacuzzi?"50 000 FCFA":"20 000 FCFA";
-  const msg=[`Bonjour Queen Lounge 👑`,`Pack: ${currentPack}`,`Date: ${date}`,`Heure livraison: ${heure}`,`Nom & Prénom: ${name}`,`Téléphone: ${phone}`,`Adresse: ${adresse}`,`Caution: ${caution}`,"Je confirme ma réservation."].join("\n");
-  window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`,"_blank");closeModal();btn.disabled=false;btn.textContent="RÉSERVER SUR WHATSAPP 📱";
-}
+async function sendWhatsApp(){const name=document.getElementById("selName").value.trim(),phone=document.getElementById("selPhone").value.trim(),adresse=document.getElementById("selAdresse").value.trim(),date=document.getElementById("selDate").value,heure=document.getElementById("selHeure").value,status=document.getElementById("reservationStatus");if(!name||name.split(" ").length<2){status.textContent="⚠️ Entrez votre Nom & Prénom (2 mots minimum).";return;}if(!phone||phone.length<8){status.textContent="⚠️ Entrez votre numéro WhatsApp.";return;}if(!adresse||adresse.length<5){status.textContent="⚠️ Entrez votre adresse exacte / quartier.";return;}if(!date){status.textContent="⚠️ Choisissez une date.";return;}const btn=document.getElementById("reserveBtn");btn.disabled=true;btn.textContent="ENREGISTREMENT...";const form=new URLSearchParams();form.append("Date",date);form.append("Service",currentPack);form.append("Nom",name);form.append("Telephone",phone);form.append("Adresse",adresse);form.append("Heure",heure);form.append("Token","queen-"+Date.now());try{await fetch(SCRIPT_URL,{method:"POST",body:form,mode:"no-cors"});}catch(e){}const caution=currentHasJacuzzi?"50 000 FCFA":"20 000 FCFA";const msg=[`Bonjour Queen Lounge 👑`,`Pack: ${currentPack}`,`Date: ${date}`,`Heure livraison: ${heure}`,`Nom & Prénom: ${name}`,`Téléphone: ${phone}`,`Adresse: ${adresse}`,`Caution: ${caution}`,"Je confirme ma réservation."].join("\n");window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`,"_blank");closeModal();btn.disabled=false;btn.textContent="RÉSERVER SUR WHATSAPP 📱";}
 document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal();});
 const d=document.getElementById("selDate");if(d){d.min=new Date().toISOString().split("T")[0];d.value=d.min;}
 </script>
