@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="format-detection" content="telephone=no">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#0F2E2A">
+<title>À Propos | Queen Lounge by Queen House</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="navbar">
+  <a href="index.html" class="logo"><div class="logo-icon">👑</div><div><span>QUEEN LOUNGE</span><small>BY QUEEN HOUSE</small></div></a>
+  <button class="burger" onclick="toggleMenu()">☰</button>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Accueil</a>
+    <div class="dropdown"><a href="#" class="drop-btn" onclick="return false">Services ▾</a>
+      <div class="drop-content">
+        <a href="mobilier-led.html">✨ Mobilier LED</a>
+        <a href="jacuzzi.html">💦 Jacuzzi VIP</a>
+        <a href="chicha.html">💨 Chicha & Chill</a>
+        <a href="combos.html">👑 Combos Complets</a>
+      </div>
+    </div>
+    <a href="a-propos.html">À Propos</a>
+    <button class="btn-dark" onclick="openModal('Demande générale',false)">Réserver</button>
+  </div>
+</nav>
+
+<section class="apropos">
+  <h1>À Propos de Nous 👑</h1>
+  <p style="color:#777;margin-top:8px">Queen Lounge by Queen House — Le luxe & le chill s'invitent chez vous.</p>
+  <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=1200&q=80" alt="Queen Lounge">
+  <p style="line-height:1.8;color:#444;text-align:left">Nous sommes <b>Queen Lounge by Queen House</b>, une entreprise de location premium à <b>Libreville</b>. Notre mission est simple : transformer votre jardin, terrasse ou salon en un espace VIP chic, lumineux et décontracté, sans que vous ayez à vous soucier de rien.<br><br>Nous livrons, installons, vérifions et récupérons. Vous, vous profitez. Anniversaire, soirée entre amis, garden party ou soirée romantique — on s'occupe de tout avec professionnalisme et bonne humeur.</p>
+
+  <h2 style="margin-top:30px">Comment ça marche ?</h2>
+  <div class="steps">
+    <div><h3>1. 📱 Réservez</h3><p>Choisissez votre pack sur WhatsApp en 2 minutes.</p></div>
+    <div><h3>2. 🚚 Livraison</h3><p>On livre à l'heure choisie à Libreville, Akanda, Owendo.</p></div>
+    <div><h3>3. ✨ Installation</h3><p>On installe et on teste tout avant de partir.</p></div>
+    <div><h3>4. 🥂 Profitez</h3><p>Vous profitez. On récupère le lendemain.</p></div>
+  </div>
+
+  <h2>Nos zones</h2>
+  <p style="color:#555">Libreville • Akanda • Angondjé • Owendo • Alibandeng • Nzeng-Ayong</p>
+
+  <h2 style="margin-top:24px">Nos valeurs</h2>
+  <p style="color:#444;line-height:1.8">✨ Qualité garantie &nbsp; • &nbsp; ⏰ Ponctualité &nbsp; • &nbsp; 🛡️ Sécurité & Caution claire &nbsp; • &nbsp; ❤️ Service avec le sourire</p>
+
+  <div style="margin:30px 0;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a class="btn-dark" href="combos.html">Voir les Combos 👑</a>
+    <button class="btn-gold" onclick="openModal('Demande générale',false)">Réserver maintenant →</button>
+  </div>
+</section>
+
+<section class="avis">
+  <h2>Ils nous ont fait confiance ❤️</h2>
+  <div class="avis-viewport"><div class="avis-track">
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Équipe adorable, tout parfait du début à la fin."</p><b>— Grâce, Angondjé</b><small>Pack Lounge VIP</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Ponctuels, pros, et ambiance incroyable."</p><b>— Kevin, Akanda</b><small>Pack Queen Royal</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Je recommande Queen Lounge à tout le monde !"</p><b>— Sarah, Libreville</b><small>Pack Bulle Romantique</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Équipe adorable, tout parfait du début à la fin."</p><b>— Grâce, Angondjé</b><small>Pack Lounge VIP</small></div>
+    <div class="avis-card"><div class="stars">⭐⭐⭐⭐⭐</div><p>"Ponctuels, pros, et ambiance incroyable."</p><b>— Kevin, Akanda</b><small>Pack Queen Royal</small></div>
+  </div></div>
+</section>
+
+<footer><p>© 2026 QUEEN LOUNGE BY QUEEN HOUSE • Libreville • Akanda • Owendo • Caution obligatoire</p></footer>
+
+<div class="modal" id="modal"><div class="modal-box"><div class="modal-head"><h3>Réserver — Queen Lounge</h3><span onclick="closeModal()">×</span></div><div class="field"><label>Pack sélectionné *</label><input type="text" id="selService" readonly></div><div class="field"><label>Nom & Prénom *</label><input type="text" id="selName" placeholder="Ex: Grâce Mba"></div><div class="field two"><div><label>Téléphone WhatsApp *</label><input type="tel" id="selPhone" placeholder="06 XX XX XX"></div><div><label>Date *</label><input type="date" id="selDate"></div></div><div class="field"><label>Adresse exacte / Quartier *</label><input type="text" id="selAdresse" placeholder="Ex: Angondjé, Akanda"></div><div class="field"><label>Heure de livraison</label><select id="selHeure"><option>Matin 09:00 - 11:00</option><option>Après-midi 13:00 - 15:00</option><option>Soir 16:00 - 18:00</option></select></div><div id="securiteBox" class="securite" style="display:none"><h4>🛡️ Sécurité Jacuzzi & Caution</h4><p>• Le client fournit l'eau + accès électricité.<br>• Interdiction charbons près du jacuzzi.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi.</p></div><div id="cautionSimple" class="nota">🔒 Caution : <b>20 000 FCFA</b></div><button id="reserveBtn" class="btn-dark full" onclick="sendWhatsApp()">RÉSERVER SUR WHATSAPP 📱</button><p id="reservationStatus" style="font-size:12px;margin-top:10px;color:#A12B20"></p></div></div>
+<script>
+"use strict";
+const WHATSAPP_NUM="241XXXXXXXXX"; const SCRIPT_URL="https://script.google.com/macros/s/TON_SCRIPT_ID/exec";
+let currentHasJacuzzi=false, currentPack="";
+function toggleMenu(){document.getElementById("navLinks").classList.toggle("open");}
+function openModal(pack,hasJac){currentPack=pack;currentHasJacuzzi=hasJac;document.getElementById("selService").value=pack;document.getElementById("modal").classList.add("active");updateSecurite(hasJac);}
+function updateSecurite(hasJac){document.getElementById("securiteBox").style.display=hasJac?"block":"none";document.getElementById("cautionSimple").style.display=hasJac?"none":"block";}
+function closeModal(){document.getElementById("modal").classList.remove("active");}
+async function sendWhatsApp(){const name=document.getElementById("selName").value.trim(),phone=document.getElementById("selPhone").value.trim(),adresse=document.getElementById("selAdresse").value.trim(),date=document.getElementById("selDate").value,heure=document.getElementById("selHeure").value,status=document.getElementById("reservationStatus");if(!name||name.split(" ").length<2){status.textContent="⚠️ Entrez votre Nom & Prénom (2 mots minimum).";return;}if(!phone||phone.length<8){status.textContent="⚠️ Entrez votre numéro WhatsApp.";return;}if(!adresse||adresse.length<5){status.textContent="⚠️ Entrez votre adresse exacte / quartier.";return;}if(!date){status.textContent="⚠️ Choisissez une date.";return;}const btn=document.getElementById("reserveBtn");btn.disabled=true;btn.textContent="ENREGISTREMENT...";const form=new URLSearchParams();form.append("Date",date);form.append("Service",currentPack);form.append("Nom",name);form.append("Telephone",phone);form.append("Adresse",adresse);form.append("Heure",heure);form.append("Token","queen-"+Date.now());try{await fetch(SCRIPT_URL,{method:"POST",body:form,mode:"no-cors"});}catch(e){}const caution=currentHasJacuzzi?"50 000 FCFA":"20 000 FCFA";const msg=[`Bonjour Queen Lounge 👑`,`Pack: ${currentPack}`,`Date: ${date}`,`Heure livraison: ${heure}`,`Nom & Prénom: ${name}`,`Téléphone: ${phone}`,`Adresse: ${adresse}`,`Caution: ${caution}`,"Je confirme ma réservation."].join("\n");window.open(`https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent(msg)}`,"_blank");closeModal();btn.disabled=false;btn.textContent="RÉSERVER SUR WHATSAPP 📱";}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal();});
+const d=document.getElementById("selDate");if(d){d.min=new Date().toISOString().split("T")[0];d.value=d.min;}
+</script>
+</body>
+</html>
