@@ -148,3 +148,15 @@ footer strong{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spaci
   .page-hero{min-height:340px}
   .page-hero-inner{padding:50px 5% 32px}
 }
+
+/* STEPS 01-04 — ARREGLO APLASTADO */
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:left;width:100%}
+.steps-grid .card{min-width:0;overflow-wrap:break-word}
+.steps-grid .card h3{overflow-wrap:break-word;white-space:normal}
+.steps-grid .card p{overflow-wrap:break-word;white-space:normal}
+@media(max-width:900px){
+  .steps-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+  .steps-grid{grid-template-columns:1fr}
+}
