@@ -190,3 +190,27 @@ footer strong{font-family:'Cormorant Garamond',serif;font-size:18px;letter-spaci
 .combo-total{font-family:'Cormorant Garamond',serif;font-size:28px;color:#0B0B0B}
 @media(max-width:900px){.combo-grid{grid-template-columns:1fr 1fr}.combo-hero-card{grid-template-columns:1fr}}
 @media(max-width:560px){.combo-grid{grid-template-columns:1fr}}
+
+/* ===== GALERÍA TODO UNIDO ===== */
+.gallery-section{padding-top:0}
+.gallery-unie{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#0B0B0B;line-height:0}
+.gallery-unie figure{position:relative;overflow:hidden;margin:0;cursor:pointer;aspect-ratio:4/3}
+.gallery-unie img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease, filter .8s ease;filter:saturate(1.05)}
+.gallery-unie figure:hover img{transform:scale(1.08);filter:saturate(1.15)}
+.gallery-unie figcaption{position:absolute;inset:auto 0 0 0;padding:28px 18px 16px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.72));display:flex;align-items:flex-end;opacity:0;transform:translateY(8px);transition:.5s ease}
+.gallery-unie figure:hover figcaption{opacity:1;transform:translateY(0)}
+.gallery-unie figcaption span{font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;line-height:1.1}
+.gallery-note{text-align:center;font-size:13px;color:#999;margin-top:14px}
+/* En móvil: 2 columnas unidas, sigue todo pegado */
+@media(max-width:700px){.gallery-unie{grid-template-columns:repeat(2,1fr)}.gallery-unie figcaption{opacity:1;transform:none}}
+@media(max-width:400px){.gallery-unie{grid-template-columns:1fr}}
+
+/* ===== AVIS CON ANIMACIÓN SUAVE QUE PASA SOLA ===== */
+.avis-section{overflow:hidden}
+.avis-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.avis-track{display:flex;gap:18px;width:max-content;animation:avis-scroll 32s linear infinite}
+.avis-marquee:hover .avis-track{animation-play-state:paused}
+.avis-track .avis-card{width:340px;flex-shrink:0;box-shadow:0 10px 30px rgba(0,0,0,.04)}
+@keyframes avis-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:560px){.avis-track{animation-duration:22s}.avis-track .avis-card{width:280px}}
+@media(prefers-reduced-motion:reduce){.avis-track{animation:none;flex-wrap:wrap;width:auto}}
