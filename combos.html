@@ -7,7 +7,7 @@
   <button class="burger" onclick="toggleMenu()">☰</button>
   <div class="nav-links" id="navLinks">
     <a href="index.html">Accueil</a>
-    <div class="dropdown"><a href="#" onclick="return false">Services ▾</a><div class="drop-content">
+    <div class="dropdown"><a href="#" onclick="toggleDropdown(this);return false">Services ▾</a><div class="drop-content">
       <a href="mobilier-led.html">Mobilier LED</a><a href="jacuzzi.html">Jacuzzi VIP</a><a href="chicha.html">Chicha &amp; Chill</a><a href="combos.html">Combos Complets</a></div></div>
     <a href="a-propos.html">À Propos</a>
     <button class="btn-dark" onclick="openModal('Demande générale',false)">Réserver</button>
@@ -38,16 +38,16 @@
 <div class="grid-3"><div class="card pack-card "><h3>Pack Queen Lounge VIP</h3><p>Jacuzzi VIP + 1 Ensemble + 1 Chicha offerte</p><div class="price">80 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Queen Lounge VIP - 80000F',true)">Réserver →</button></div><div class="card pack-card "><h3>Pack Combo Pool & Chill</h3><p>Jacuzzi VIP + Ensemble LED complet + 2 Chichas</p><div class="price">85 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Combo Pool & Chill - 85000F',true)">Réserver →</button></div><div class="card pack-card popular"><span class="tag">Expérience Ultime</span><h3>Pack Queen Royal</h3><p>Jacuzzi VIP + Tout le mobilier LED + 3 Chichas</p><div class="price">100 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Queen Royal - 100000F',true)">Réserver →</button></div></div>
 <div style="text-align:center;margin-top:28px"><button class="btn-gold" onclick="toggleBuilder()">Composer mon pack — À la carte</button></div>
 <div id="builder" class="builder" style="display:none"><h3 style="font-size:28px">Composez votre pack</h3><label class="build-item"><input type="checkbox" data-price="60000" data-jacuzzi="1" data-name="Jacuzzi VIP seul" onchange="calcBuilder(true)"> Jacuzzi VIP seul <b>60 000 FCFA</b></label><label class="build-item"><input type="checkbox" data-price="20000" data-name="Ensemble Table Cube + 4 Chaises LED" onchange="calcBuilder(true)"> Ensemble Table Cube + 4 Chaises LED <b>20 000 FCFA</b></label><label class="build-item"><input type="checkbox" data-price="7000" data-name="Chicha seule" onchange="calcBuilder(true)"> Chicha seule <b>7 000 FCFA</b></label><div class="builder-total">Total : <span id="totalPrice">0</span> FCFA • Caution : <span id="cautionPrice">20 000</span> FCFA</div><button class="btn-dark full" onclick="openModalFromBuilder(false)">Réserver ce pack personnalisé →</button></div></section>
-<footer><strong>QUEEN LOUNGE BY QUEEN HOUSE</strong><br>Libreville • Akanda • Owendo • Caution obligatoire<br>© 2026 Queen Lounge — Tous droits réservés</footer><div class="modal" id="modal"><div class="modal-box">
+<footer><strong>QUEEN LOUNGE BY QUEEN HOUSE</strong><br>Libreville • Akanda • Owendo • Caution obligatoire<br>© 2026 Queen Lounge by Queen House — Tous droits réservés</footer><div class="modal" id="modal"><div class="modal-box">
   <div class="modal-head"><div><span class="eyebrow">Queen Lounge — Libreville</span><h3>Réserver</h3><p>Complétez votre réservation en 2 minutes.</p></div><span onclick="closeModal()">×</span></div>
   <div class="field"><label>Pack sélectionné</label><input type="text" id="selService" readonly></div>
   <div class="field"><label>Nom &amp; Prénom *</label><input type="text" id="selName" placeholder="Ex : Grâce Mba"></div>
-  <div class="field two"><div><label>Téléphone WhatsApp *</label><input type="tel" id="selPhone" placeholder="06 XX XX XX"></div><div><label>Date *</label><input type="date" id="selDate"></div></div>
+  <div class="field two"><div><label>Téléphone *</label><input type="tel" id="selPhone" placeholder="06 XX XX XX"></div><div><label>Date *</label><input type="date" id="selDate"></div></div>
   <div class="field"><label>Adresse exacte / Quartier *</label><input type="text" id="selAdresse" placeholder="Ex : Angondjé, Akanda"></div>
   <div class="field"><label>Heure de livraison</label><select id="selHeure"><option>Matin 09:00 - 11:00</option><option>Après-midi 13:00 - 15:00</option><option>Soir 16:00 - 18:00</option></select></div>
   <div class="field"><label>Paiement</label><div class="pay-grid">
-    <div class="pay-opt active" onclick="selectPay(this)"><b>Acompte</b><small>Pour confirmer votre date</small></div>
-    <div class="pay-opt" onclick="selectPay(this)"><b>Paiement sur place</b><small>Solde à la livraison</small></div>
+    <p style="font-size:12px;color:#888;margin:0 0 8px">Acompte obligatoire pour confirmer votre date. Choisissez comment vous payez :</p><div class="pay-opt active" onclick="selectPay(this)" data-pay="Payer tout maintenant"><b>Payer tout maintenant</b><small>Tu paies le total + caution d'un coup</small></div>
+    <div class="pay-opt" onclick="selectPay(this)" data-pay="Acompte + solde sur place"><b>Acompte + solde sur place</b><small>Tu donnes l'acompte maintenant, le reste à la livraison</small></div>
   </div></div>
   <div id="securiteBox" class="securite" style="display:none"><b>Sécurité Jacuzzi &amp; Caution</b><br>• Le client fournit l'eau + accès électricité.<br>• Interdiction charbons près du jacuzzi.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi.</div>
   <div id="cautionSimple" class="nota">Caution : <b>20 000 FCFA</b> — Restituée après vérification.</div>
