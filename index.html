@@ -7,7 +7,7 @@
   <button class="burger" onclick="toggleMenu()">☰</button>
   <div class="nav-links" id="navLinks">
     <a href="index.html">Accueil</a>
-    <div class="dropdown"><a href="#" onclick="toggleDropdown(this,event);return false">Services ▾</a><div class="drop-content">
+    <div class="dropdown"><a href="#" class="dropdown-toggle" aria-expanded="false">Services ▾</a><div class="drop-content">
       <a href="mobilier-led.html">Mobilier LED</a><a href="jacuzzi.html">Jacuzzi VIP</a><a href="chicha.html">Chicha &amp; Chill</a><a href="combos.html">Combos Complets</a></div></div>
     <a href="a-propos.html">À Propos</a>
     <button class="btn-dark" onclick="openModal('Demande générale',false)">Réserver</button>
@@ -71,3 +71,4 @@
   <button id="reserveBtn" class="btn-dark full" onclick="sendWhatsApp()">Réserver sur WhatsApp →</button>
   <p id="reservationStatus" style="font-size:12px;margin-top:10px;color:#A12B20"></p>
 </div></div><script src="script.js"></script></body></html>
+ 
