@@ -1,5 +1,25 @@
 // QUEEN LOUNGE - JS compartido
 const WHATSAPP_NUM="24162516457";
+// === SUBMENU SERVICES - UN SOLO HANDLER DELEGADO PARA TODAS LAS PÁGINAS ===
+// Funciona en Accueil, À Propos y Servicios porque no depende del onclick inline.
+// Captura el click: si tocas "Services", hace toggle UNA sola vez. Si tocas fuera, cierra.
+document.addEventListener('click', function(e){
+  const trigger = e.target.closest('.dropdown > a');
+  if(trigger){
+    e.preventDefault();
+    e.stopPropagation();
+    const dd = trigger.closest('.dropdown');
+    const wasOpen = dd.classList.contains('open');
+    document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));
+    if(!wasOpen) dd.classList.add('open');
+    return;
+  }
+  if(!e.target.closest('.dropdown')){
+    document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));
+  }
+}, true); // capture:true = se ejecuta ANTES que cualquier otro handler, no hay doble-toggle
+function toggleDropdown(el,ev){ if(ev){ev.preventDefault(); ev.stopPropagation();} const dd=el?el.closest('.dropdown'):null; if(dd) dd.classList.toggle('open'); }
+
 const SCRIPT_URL="https://script.google.com/macros/s/TON_SCRIPT_ID/exec";
 
 // === CAUTION DYNAMIQUE - tiene sentido: % del total, no fija ===
@@ -31,8 +51,6 @@ function refreshCautionUI(){
 }
 
 let currentHasJacuzzi=false, currentPack="";
-// CLOSE_DROPDOWN_OUTSIDE - solo cierra si tocas FUERA, nunca hace toggle
-document.addEventListener('click', function(e){ if(!e.target.closest('.dropdown')){ document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open')); } });
 function toggleMenu(){document.getElementById("navLinks").classList.toggle("open")}
 function openModal(pack,hasJac){ currentPack=pack; currentHasJacuzzi=!!hasJac; currentTotal=getPackTotal(pack); const el=document.getElementById('selService'); if(el) el.value=pack; document.getElementById('modal').classList.add('active'); updateSecurite(hasJac); refreshCautionUI(); }
 function updateSecurite(hasJac){const s=document.getElementById("securiteBox"),c=document.getElementById("cautionSimple");if(s)s.style.display=hasJac?"block":"none";if(c)c.style.display=hasJac?"none":"block"}
@@ -56,8 +74,6 @@ function changeQty(key,delta){const max=COMBO_MAX[key];let v=(comboQty[key]||0)+
 function updateCombo(){let total=0,lines=[];for(const k in comboQty){const q=comboQty[k];if(q>0){const sub=q*COMBO_PRICES[k];total+=sub;lines.push(`${q} x ${COMBO_NAMES[k]} = ${sub.toLocaleString("fr-FR")} FCFA`)}}const hasJac=comboQty.jacuzzi>0;const cc2=calcCaution(total);currentTotal=total;currentCaution=cc2.amount;currentCautionPct=cc2.pct;const caution=fmt(cc2.amount)+" ("+cc2.pct+"%)";const totalEl=document.getElementById("comboTotal");if(totalEl)totalEl.textContent=total.toLocaleString("fr-FR");const listEl=document.getElementById("comboList");if(listEl)listEl.innerHTML=lines.length?lines.map(l=>`<li>${l}</li>`).join(""):"<li style='color:#999'>Aucun élément sélectionné pour le moment.</li>";const cautEl=document.getElementById("comboCaution");if(cautEl)cautEl.textContent=caution;currentPack=lines.length?("Combo sur mesure: "+Object.keys(comboQty).filter(k=>comboQty[k]>0).map(k=>`${comboQty[k]} x ${COMBO_NAMES[k]}`).join(" + ")+` = ${total}F`):"";currentHasJacuzzi=hasJac;return hasJac}
 function openComboModal(){updateCombo();if(!currentPack){alert("Choisissez au moins un élément pour créer votre combo.");return}openModal(currentPack,currentHasJacuzzi)}
 
-// FIX Submenu Services: cerrado por defecto en móvil, abre solo con click
-function toggleDropdown(el,ev){ if(ev) ev.stopPropagation(); const dd=el.closest('.dropdown'); if(dd) dd.classList.toggle('open'); }
 document.addEventListener('click', function(e){
   const dd = e.target.closest('.dropdown');
   if(!dd){ document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open')); return; }
