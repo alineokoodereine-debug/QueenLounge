@@ -280,3 +280,21 @@ input, select, textarea{ -webkit-appearance:none; appearance:none; }
 
 /* FIX: Tablet */
 @media(min-width:641px) and (max-width:1024px){ .section{padding-left:24px;padding-right:24px} .grid-4{grid-template-columns:repeat(2,1fr)} }
+
+/* === FIX FINAL SUBMENU - al final para que gane a todas las reglas anteriores === */
+/* En PC: hover normal */
+@media (min-width: 901px){
+  .navbar .dropdown:hover .drop-content{ display:block !important; }
+  .navbar .dropdown .drop-content{ display:none; }
+  .navbar .dropdown.open .drop-content{ display:block !important; }
+}
+/* En MÓVIL/TABLET: cerrado por defecto, abre con .open O con focus-within (respaldo sin JS) */
+@media (max-width: 900px){
+  .navbar .nav-links .dropdown .drop-content{ display:none !important; max-height:0 !important; overflow:hidden; visibility:hidden; }
+  .navbar .nav-links .dropdown.open .drop-content,
+  .navbar .nav-links .dropdown:focus-within .drop-content{
+    display:block !important; max-height:500px !important; overflow:visible; visibility:visible;
+    position:static !important; box-shadow:none !important; border:0 !important; padding:0 0 0 10px !important;
+  }
+  .navbar .nav-links .dropdown > a{ display:block; width:100%; cursor:pointer; -webkit-tap-highlight-color:transparent; }
+}
