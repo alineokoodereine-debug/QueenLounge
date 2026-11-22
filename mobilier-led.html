@@ -7,7 +7,7 @@
   <button class="burger" onclick="toggleMenu()">☰</button>
   <div class="nav-links" id="navLinks">
     <a href="index.html">Accueil</a>
-    <div class="dropdown"><a href="#" onclick="toggleDropdown(this);return false">Services ▾</a><div class="drop-content">
+    <div class="dropdown"><a href="#" class="dropdown-toggle" aria-expanded="false">Services ▾</a><div class="drop-content">
       <a href="mobilier-led.html">Mobilier LED</a><a href="jacuzzi.html">Jacuzzi VIP</a><a href="chicha.html">Chicha &amp; Chill</a><a href="combos.html">Combos Complets</a></div></div>
     <a href="a-propos.html">À Propos</a>
     <button class="btn-dark" onclick="openModal('Demande générale',false)">Réserver</button>
@@ -18,9 +18,8 @@
   <div class="page-hero-inner">
     <span class="eyebrow">Queen Lounge — Libreville</span>
     <h1>Mobilier <em>LED</em></h1>
-    <p>Tables & chaises lumineuses — Idéal pour vos évenements.</p>
+    <p>Tables & chaises lumineuses —Idéal pour vos évenements.</p>
     <div class="hero-btns"><a class="btn-dark" href="#packs">Voir les packs LED →</a><a class="btn-outline" href="index.html">Retour Accueil</a></div>
-
   </div>
 </header>
 <section class="section" id="packs"><div class="grid-3"><div class="card pack-card "><h3>Pack Basic Light</h3><p>1 Table haute + 2 Chaises longues LED</p><div class="price">15 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Basic Light - 15000F',false)">Réserver →</button></div><div class="card pack-card "><h3>Pack Family Light</h3><p>1 Table cube + 4 Chaises LED</p><div class="price">20 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Family Light - 20000F',false)">Réserver →</button></div><div class="card pack-card "><h3>Pack Duo Intime Lounge</h3><p>1 Table haute + 2 Chaises longues LED + 1 Chicha</p><div class="price">20 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Duo Intime Lounge - 20000F',false)">Réserver →</button></div><div class="card pack-card popular"><span class="tag">Le plus demandé</span><h3>Pack Lounge VIP Full Light</h3><p>1 Table cube LED + 4 Chaises LED + 1 Chicha</p><div class="price">25 000 <small>FCFA</small></div><button class="btn-dark" onclick="openModal('Pack Lounge VIP Full Light - 25000F',false)">Réserver →</button></div></div>
@@ -37,8 +36,8 @@
     <p style="font-size:12px;color:#888;margin:0 0 8px">Acompte obligatoire pour confirmer votre date. Choisissez comment vous payez :</p><div class="pay-opt active" onclick="selectPay(this)" data-pay="Payer tout maintenant"><b>Payer tout maintenant</b><small>Tu paies le total + caution d'un coup</small></div>
     <div class="pay-opt" onclick="selectPay(this)" data-pay="Acompte + solde sur place"><b>Acompte + solde sur place</b><small>Tu donnes l'acompte maintenant, le reste à la livraison</small></div>
   </div></div>
-  <div id="securiteBox" class="securite" style="display:none"><b>Sécurité Jacuzzi &amp; Caution</b><br>• Le client fournit l'eau + accès électricité.<br>• Interdiction charbons près du jacuzzi.<br>• <b>Caution : 50 000 FCFA</b> avec jacuzzi.</div>
-  <div id="cautionSimple" class="nota">Caution : <b>20 000 FCFA</b> — Restituée après vérification.</div>
+  <div id="securiteBox" class="securite" style="display:none"><b>Sécurité Jacuzzi &amp; Caution</b><br>• Le client fournit l'eau + accès électricité.<br>• Interdiction charbons près du jacuzzi.<br>• <b>Caution : 50% du total</b> si total &lt; 60 000 FCFA, <b>40%</b> si total ≥ 60 000 FCFA.</div>
+  <div id="cautionSimple" class="nota">Caution : <b>50% du total</b> si total &lt; 60 000 FCFA, <b>40%</b> si total ≥ 60 000 FCFA — Restituée après vérification.</div>
   <button id="reserveBtn" class="btn-dark full" onclick="sendWhatsApp()">Réserver sur WhatsApp →</button>
   <p id="reservationStatus" style="font-size:12px;margin-top:10px;color:#A12B20"></p>
 </div></div><script src="script.js"></script></body></html>
